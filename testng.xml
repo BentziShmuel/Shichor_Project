@@ -3,22 +3,23 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/automation/javaProject">
         <classes>
-            <class name="tests.homePageTest">
-                <methods>
-                    <include name="tc01_login"/>
-                    <include name="tc02_logout"/>
-                    <include name="tc03_invalidEmailMsg"/>
-                    <include name="tc04_LoginFailed"/>
-                    <include name="tc05_getErrorRequiredMsg"/>
-                </methods>
-            </class>
             <class name="tests.SuggetionsPageTest">
                 <methods>
                     <include name="tc01_BudgetOverrun"/>
                     <include name="tc02_tripBudgetPrice"/>
                     <include name="tc03_howMuchBtn"/>
                     <include name="tc04_whoBtn"/>
-                    <include name="tc05_whatBtn"/>
+                    <include name="tc05_noMorePeopleAdded"/>
+                    <include name="tc06_errorTotalNumber"/>
+                </methods>
+            </class>
+            <class name="tests.DestinationsTest">
+                <methods>
+                    <include name="tc01_searchDestination"/>
+                    <include name="tc02_nextPage"/>
+                    <include name="tc03_errorMsgSymbols"/>
+                    <include name="tc04_ClickBookmarkBtn"/>
+                    <include name="tc05_removeBookmarkBtn"/>
                 </methods>
             </class>
             <class name="tests.CreateTripPageTest">
@@ -30,13 +31,13 @@
                     <include name="tc05_purposeBtn"/>
                 </methods>
             </class>
-            <class name="tests.DestinationsTest">
+            <class name="tests.homePageTest">
                 <methods>
-                    <include name="tc01_searchDestination"/>
-                    <include name="tc02_nextPage"/>
-                    <include name="tc03_errorMsgSymbols"/>
-                    <include name="tc04_ClickBookmarkBtn"/>
-                    <include name="tc05_removeBookmarkBtn"/>
+                    <include name="tc01_login"/>
+                    <include name="tc02_logout"/>
+                    <include name="tc03_invalidEmailMsg"/>
+                    <include name="tc04_LoginFailed"/>
+                    <include name="tc05_getErrorRequiredMsg"/>
                 </methods>
             </class>
         </classes>
