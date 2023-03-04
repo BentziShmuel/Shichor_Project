@@ -28,7 +28,8 @@ public class SuggetionsPageTest extends BaseTest {
         SuggestionsPage sp = new SuggestionsPage(driver);
         sp.waitToHowMuchBtn();
         driver.navigate().refresh();
-        sp.sleep(1500);
+        sp.waitToHowMuchBtn();
+        sp.sleep(2000);
         sp.clickHowMuchBtn();
         sp.sleep(5000);
         sp.scrollToHowMuchSlider();
@@ -76,7 +77,7 @@ public class SuggetionsPageTest extends BaseTest {
         ctp.clickNextStep2();
         sp.waitToHowMuchBtn();
         driver.navigate().refresh();
-        sp.sleep(700);
+        sp.sleep(1000);
         sp.clickHowMuchBtn();
         sp.sleep(5000);
         sp.scrollToHowMuchSlider();

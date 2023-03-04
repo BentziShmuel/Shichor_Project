@@ -41,10 +41,12 @@ public class SuggestionsPage extends BasePage {
 
     //Actions
     public void clickHowMuchBtn() {
+        waitTo(howMuchBtn);
         click(howMuchBtn);
     }
 
     public void clickWhoBtn() {
+        waitTo(whoBtn);
         click(whoBtn);
     }
 
