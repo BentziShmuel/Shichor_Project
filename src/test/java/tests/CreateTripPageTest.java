@@ -21,60 +21,49 @@ public class CreateTripPageTest extends BaseTest {
     }
 
     @Test
-    public void tc02_nameStepBtn() {
+    public void tc02_parisBtn() {
         CreateTripPage ctp = new CreateTripPage(driver);
         ctp.clickStart();
-        String namePopularDestination = "";
-        String nameStep = "";
-        String actual = "";
-        //Paris
-        namePopularDestination = ctp.getNameParisBtn();
+        String expected = ctp.getNameParisBtn();
         ctp.clickParis();
-        nameStep = ctp.getNameStep();
+        String actual = ctp.getNameStep();
         ctp.clickBackStep();
-        if (nameStep.contains(namePopularDestination)) {
-            actual = actual + ctp.getNameParisBtn();
-        } else {
-            actual = actual + ctp.getNameParisBtn() + "not equal";
-        }
-        //Larnaca
-        namePopularDestination = ctp.getNameLarnacaBtn();
-        ctp.clickLarnaca();
-        nameStep = ctp.getNameStep();
-        ctp.clickBackStep();
-        if (nameStep.contains(namePopularDestination)) {
-            actual = actual + ctp.getNameLarnacaBtn();
-        } else {
-            actual = actual + ctp.getNameLarnacaBtn() + "not equal";
-        }
-        //Amsterdam
-        namePopularDestination = ctp.getNameAmsterdamBtn();
-        ctp.clickAmsterdam();
-        nameStep = ctp.getNameStep();
-        ctp.clickBackStep();
-        if (nameStep.contains(namePopularDestination)) {
-            actual = actual + ctp.getNameAmsterdamBtn();
-        } else {
-            actual = actual + ctp.getNameAmsterdamBtn() + "not equal";
-        }
-        //Budapest
-        namePopularDestination = ctp.getNameBudapestBtn();
-        ctp.clickBudapest();
-        nameStep = ctp.getNameStep();
-        ctp.clickBackStep();
-        if (nameStep.contains(namePopularDestination)) {
-            actual = actual + ctp.getNameBudapestBtn();
-        } else {
-            actual = actual + ctp.getNameBudapestBtn() + "not equal";
-        }
-        //Test all popular destinations page.
-        namePopularDestination = ctp.getNameParisBtn() + ctp.getNameLarnacaBtn() + ctp.getNameAmsterdamBtn() + ctp.getNameBudapestBtn();
-        System.out.println(actual);
-        Assert.assertEquals(actual, namePopularDestination);
+        Assert.assertEquals(actual, expected);
     }
 
     @Test
-    public void tc03_returnDateErrorMsg() {
+    public void tc03_larnacaBtn() {
+        CreateTripPage ctp = new CreateTripPage(driver);
+        String expected = ctp.getNameLarnacaBtn();
+        ctp.clickLarnaca();
+        String actual = ctp.getNameStep();
+        ctp.clickBackStep();
+        Assert.assertEquals(actual, expected);
+
+    }
+
+    @Test
+    public void tc04_amsterdamBtn() {
+        CreateTripPage ctp = new CreateTripPage(driver);
+        String expected = ctp.getNameAmsterdamBtn();
+        ctp.clickAmsterdam();
+        String actual = ctp.getNameStep();
+        ctp.clickBackStep();
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void tc05_budapestBtn() {
+        CreateTripPage ctp = new CreateTripPage(driver);
+        String expected = ctp.getNameBudapestBtn();
+        ctp.clickBudapest();
+        String actual = ctp.getNameStep();
+        ctp.clickBackStep();
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void tc06_returnDateErrorMsg() {
         CreateTripPage ctp = new CreateTripPage(driver);
         ctp.clickParis();
         ctp.clickPlanTripBtn();
@@ -85,9 +74,9 @@ public class CreateTripPageTest extends BaseTest {
     }
 
     @Test
-    public void tc04_whenBtn() {
+    public void tc07_whenBtn() {
         CreateTripPage ctp = new CreateTripPage(driver);
-        String startDate = ctp.startDate(22,"March", 2023);
+        String startDate = ctp.startDate(22, "March", 2023);
         String endDate = ctp.endDate(27, "March", 2023);
         String daysSelected = startDate + "-" + endDate;
         daysSelected = daysSelected.replace(" ", "");
@@ -101,20 +90,20 @@ public class CreateTripPageTest extends BaseTest {
     }
 
     @Test
-    public void tc05_purposeBtn() {
+    public void tc08_purposeBtn() {
         CreateTripPage ctp = new CreateTripPage(driver);
         ctp.clickShichorBtn();
         HomePage hp = new HomePage(driver);
         hp.clickBuildTripBtn();
         ctp.waitToInspireMeBtn();
         ctp.clickInspireMeBtn();
-        String startDate = ctp.startDate(22,"March", 2023);
+        String startDate = ctp.startDate(22, "March", 2023);
         String endDate = ctp.endDate(27, "March", 2023);
         ctp.clickNextStep();
         ctp.clickFamilyTripBtn();
         ctp.clickBarMitzvahBtn();
         ctp.clickNextStep2();
-        ctp.SpecifyYourInterest(1,2,3,4,5,6,7,8);
+        ctp.SpecifyYourInterest(1, 2, 3, 4, 5, 6, 7, 8);
         ctp.clickNextStep2();
         OverviewPage op = new OverviewPage(driver);
         op.waitToPurposeBtn();
