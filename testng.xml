@@ -25,10 +25,13 @@
             <class name="tests.CreateTripPageTest">
                 <methods>
                     <include name="tc01_getTtitlePage"/>
-                    <include name="tc02_nameStepBtn"/>
-                    <include name="tc03_returnDateErrorMsg"/>
-                    <include name="tc04_whenBtn"/>
-                    <include name="tc05_purposeBtn"/>
+                    <include name="tc02_parisBtn"/>
+                    <include name="tc03_larnacaBtn"/>
+                    <include name="tc04_amsterdamBtn"/>
+                    <include name="tc05_budapestBtn"/>
+                    <include name="tc06_returnDateErrorMsg"/>
+                    <include name="tc07_whenBtn"/>
+                    <include name="tc08_purposeBtn"/>
                 </methods>
             </class>
             <class name="tests.homePageTest">
