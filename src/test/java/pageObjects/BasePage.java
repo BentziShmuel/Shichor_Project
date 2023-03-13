@@ -115,9 +115,6 @@ public class BasePage {
         wait.until(ExpectedConditions.titleContains(title));
     }
 
-    /*
-     * Call this method with your element and a color like (red,green,orange etc...)
-     */
     private void highlightElement(WebElement element) {
         //keep the old style to change it back
         String originalStyle = element.getAttribute("style");
