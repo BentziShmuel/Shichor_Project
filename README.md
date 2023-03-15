@@ -9,8 +9,6 @@
 	<h1>Automated Testing Project for Shichor Website</h1>
 	<p>This project is an automated testing project designed to test the "Shichor" website, using the following technologies:</p>
 	<ul>
-		<li>Page Object Model</li>
-		<li>Base Page</li>
 		<li>PageFactory</li>
 		<li>Java</li>
 		<li>Selenium</li>
@@ -39,6 +37,6 @@
 	<h2>About Shichor Website</h2>
 	<p>The Shichor website is an online platform that offers various services to its customers. It provides services like digital marketing, website design, search engine optimization, content writing, and more. The website has a user-friendly interface that allows customers to easily navigate through the platform and find the services they need.</p>
 	<h2>Conclusion</h2>
-	<p>This automated testing project is an effective and efficient way to test the Shichor website, ensuring that it functions as expected and providing a high-quality user experience. The use of the Page Object Model, Base Page, and PageFactory design patterns, along with Java, Selenium, TestNG, POM, Maven, and Allure, makes this project a robust and reliable testing solution.</p>
+	<p>This automated testing project is an effective and efficient way to test the Shichor website, ensuring that it functions as expected and providing a high-quality user experience. The use of the Page Object Model POM,  and PageFactory design patterns, along with Java, Selenium, TestNG, Maven, and Allure, makes this project a robust and reliable testing solution.</p>
 </body>
 </html>
