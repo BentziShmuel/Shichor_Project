@@ -1,33 +1,10 @@
 <html>
 <head>
 	<title>Automated Testing Project for Shichor Website</title>
-	<style>
-		h1 {
-			font-size: 36px;
-			font-weight: bold;
-			text-align: center;
-			margin-top: 50px;
-		}
-css
-Copy code
-	p {
-		font-size: 18px;
-		line-height: 1.5;
-		margin-bottom: 20px;
-	}
-
-	ul {
-		list-style: disc;
-		margin-left: 30px;
-		margin-bottom: 20px;
-	}
-
-	li {
-		font-size: 18px;
-		line-height: 1.5;
-	}
-</style>
+	
 </head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
 <body>
 	<h1>Automated Testing Project for Shichor Website</h1>
 	<p>This project is an automated testing project designed to test the "Shichor" website, using the following technologies:</p>
