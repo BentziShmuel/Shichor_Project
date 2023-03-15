@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Automated Testing Project for Shichor Website</title>
+
 	
 </head>
   <link rel="stylesheet" type="text/css" href="style.css">
