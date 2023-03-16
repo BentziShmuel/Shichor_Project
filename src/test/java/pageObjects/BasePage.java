@@ -17,21 +17,6 @@ import java.util.List;
 
 public class BasePage {
 
-    @FindBy(css = ".app-header__logo")
-    private WebElement shichorBtn;
-    @FindBy(css = "div.nav-right__user > button")
-    private WebElement signInBtn;
-    @FindBy(css = "#email")
-    private WebElement emailFiled;
-    @FindBy(css = "[type='password']")
-    private WebElement passwordFiled;
-    @FindBy(css = ".btn-blue.btn-fluid.btn")
-    private WebElement loginBtn;
-    @FindBy(css = "div.app-header__desktop > nav > div > a:nth-child(1)")
-    private WebElement destinationsBtn;
-    @FindBy(css = "[href='#close']")
-    private WebElement closeLoginBtn;
-
     WebDriver driver;
     WebDriverWait wait;
     Actions actions;
@@ -44,27 +29,6 @@ public class BasePage {
         actions = new Actions(driver);
 
     }
-    public void clickShichorBtn() {
-        click(shichorBtn);
-        sleep(1000);
-    }
-
-    public void login(String email, String password) {
-        click(signInBtn);
-        fillText(emailFiled, email);
-        fillText(passwordFiled, password);
-        click(loginBtn);
-    }
-
-    public void closeLogin() {
-        waitTo(closeLoginBtn);
-        click(closeLoginBtn);
-    }
-
-    public void clickDestinationsBtn() {
-        click(destinationsBtn);
-    }
-
 
     public void fillText(WebElement el, String text) {
         highlightElement(el);
@@ -115,6 +79,9 @@ public class BasePage {
         wait.until(ExpectedConditions.titleContains(title));
     }
 
+    /*
+     * Call this method with your element and a color like (red,green,orange etc...)
+     */
     private void highlightElement(WebElement element) {
         //keep the old style to change it back
         String originalStyle = element.getAttribute("style");
@@ -131,19 +98,7 @@ public class BasePage {
 
     }
 
-    public void closePopUp() { // Refresh page when there is a popup
-        sleep(8000);
-        List<WebElement> list = driver.findElements(By.tagName("picture"));
-        for (WebElement el : list) {
-            if (el.getAttribute("Class").toLowerCase().contains("popup")) {
-                waitTo(el);
-                driver.navigate().refresh();
-                break;
-            }
-        }
-    }
-
-    public void moveSlider(WebElement element, int x, int y) {
+      public void moveSlider(WebElement element, int x, int y) {
         WebElement Slider = element;
         Actions moveSlider = new Actions(driver);
         Action action = moveSlider.dragAndDropBy(Slider, x, y).build();

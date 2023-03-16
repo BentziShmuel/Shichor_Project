@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class SuggestionsPage extends BasePage {
+public class SuggestionsPage extends NavBar {
     @FindBy(css = "div:nth-child(4) > button > div.step-value")
     private WebElement howMuchBtn;
     @FindBy(css = "div:nth-child(3) > button > div.step-value")

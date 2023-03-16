@@ -9,20 +9,19 @@ import pageObjects.PopularPage;
 
 public class DestinationsTest extends BaseTest {
 
-    @Test
+    @Test (description = "Search for a destination and verify the page title")
     public void tc01_searchDestination() {
         HomePage hp = new HomePage(driver);
         hp.closePopUp();
         hp.clickGotItBtn();
         hp.clickDestinationsBtn();
         DestinationsPage dp = new DestinationsPage(driver);
-        dp.closePopUp();
         dp.searchDestination("vienna");
         dp.sleep(1000);
         Assert.assertTrue(dp.getTitlePage().contains("vienna"));
     }
 
-    @Test
+    @Test (description = "Verify that the destinations page shows different results after clicking on the next page button")
     public void tc02_nextPage() {
         HomePage hp = new HomePage(driver);
         hp.clickDestinationsBtn();
@@ -33,7 +32,7 @@ public class DestinationsTest extends BaseTest {
         Assert.assertTrue(!(allNameDestinationsPage1.contains(allNameDestinationsPage2)));
     }
 
-    @Test
+    @Test (description = "Verify error messages displayed when searching with less than 2 characters on Destinations page")
     public void tc03_errorMsgSymbols() {
         HomePage hp = new HomePage(driver);
         hp.clickDestinationsBtn();
@@ -44,7 +43,7 @@ public class DestinationsTest extends BaseTest {
         Assert.assertEquals(dp.getErrorMsgType2(), "Required 2 or more symbols to search");
     }
 
-    @Test
+    @Test (description = "Bookmark all destinations in Popular page")
     public void tc04_ClickBookmarkBtn() {
         DestinationsPage dp = new DestinationsPage(driver);
         dp.clickShichorBtn();
@@ -57,7 +56,7 @@ public class DestinationsTest extends BaseTest {
         pp.sleep(5000);
     }
 
-    @Test
+    @Test (description = "Remove all bookmarks from Popular page")
     public void tc05_removeBookmarkBtn() {
         DestinationsPage dp = new DestinationsPage(driver);
         dp.clickShichorBtn();

@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class OverviewPage extends BasePage {
+public class OverviewPage extends NavBar {
     @FindBy(css = "div:nth-child(2) > button > div.step-value")
     private WebElement whenDays;
     @FindBy(css = "div:nth-child(5) > button > div.step-value")

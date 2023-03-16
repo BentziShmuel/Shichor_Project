@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class PopularPage extends BasePage {
+public class PopularPage extends NavBar {
 
     @FindBy(css = ".vector-icon.bookmark-button-2__icon.bookmark-button-2__filled")
     private List <WebElement> bookmarkBtn;

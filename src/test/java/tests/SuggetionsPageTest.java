@@ -8,7 +8,7 @@ import pageObjects.SuggestionsPage;
 
 public class SuggetionsPageTest extends BaseTest {
 
-    @Test  // Checks whether there are trips that exceed the selected budget (a bug was found)
+    @Test (description = "Verify website displays budget-appropriate trips.")
     public void tc01_BudgetOverrun() {
         HomePage hp = new HomePage(driver);
         hp.closePopUp();
@@ -44,7 +44,7 @@ public class SuggetionsPageTest extends BaseTest {
         Assert.assertEquals(exceptions, "");
     }
 
-    @Test // Checking whether the budget for the trip is the same on the pages (a bug was found)
+    @Test (description = "Checking if the budget for the trip is the same on all pages.")
     public void tc02_tripBudgetPrice() {
         SuggestionsPage sp = new SuggestionsPage(driver);
         String expected = sp.getLondonBudgetPrice();
@@ -58,7 +58,7 @@ public class SuggetionsPageTest extends BaseTest {
         Assert.assertEquals(actual, expected);
     }
 
-    @Test
+    @Test(description = "Verify that the How much button displays the correct budget for the selected trip options.")
     public void tc03_howMuchBtn() {
         SuggestionsPage sp = new SuggestionsPage(driver);
         sp.clickShichorBtn();
@@ -89,7 +89,7 @@ public class SuggetionsPageTest extends BaseTest {
         Assert.assertEquals(actual, expected);
     }
 
-    @Test
+    @Test (description = "Verify selecting the Who button on the suggestions page and selecting a specific number of people updates the Who button correctly.")
     public void tc04_whoBtn() {
         SuggestionsPage sp = new SuggestionsPage(driver);
         sp.clickWhoBtn();
@@ -98,7 +98,7 @@ public class SuggetionsPageTest extends BaseTest {
         Assert.assertEquals(actual, expected);
     }
 
-    @Test // Checking that no more people are added than possible
+    @Test (description = "Verify selecting more than 9 people in 'Who's coming?' doesn't increase total count.")
     public void tc05_noMorePeopleAdded() {
         SuggestionsPage sp = new SuggestionsPage(driver);
         sp.clickWhoBtn();
@@ -112,7 +112,7 @@ public class SuggetionsPageTest extends BaseTest {
 
     }
 
-    @Test
+    @Test(description = "Verify error message when selecting more people than allowed (9) in the 'Who's coming?' field")
     public void tc06_errorTotalNumber() {
         SuggestionsPage sp = new SuggestionsPage(driver);
         sp.clickWhoBtn();

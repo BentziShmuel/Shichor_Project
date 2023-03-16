@@ -1,5 +1,6 @@
 package tests;
 
+import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -7,15 +8,15 @@ import pageObjects.HomePage;
 
 public class homePageTest extends BaseTest {
 
-    @Test
+    @Test (description = "Verify successful login with valid credentials")
     public void tc01_login() {
         HomePage hp = new HomePage(driver);
         hp.closePopUp();
         hp.login("pborsud@gmail.com", "By0527160957");
-        Assert.assertTrue(hp.getProfilBtnName().toLowerCase().contains("hi")); // בדוק אם שם כפתור לוגין השתנה
+        Assert.assertTrue(hp.getProfilBtnName().toLowerCase().contains("hi"));
     }
 
-    @Test
+    @Test (description = "Logout test")
     public void tc02_logout() {
         HomePage hp = new HomePage(driver);
         hp.logout();
@@ -23,7 +24,7 @@ public class homePageTest extends BaseTest {
     }
 
 
-    @Test
+    @Test (description = "Verify error message displayed when trying to login with invalid email address")
     public void tc03_invalidEmailMsg() {
         HomePage hp = new HomePage(driver);
         hp.login("e", "By123456");
@@ -34,7 +35,8 @@ public class homePageTest extends BaseTest {
     }
 
 
-    @Test(dataProvider = "getData")
+    @Test (dataProvider = "getData")
+    @Description("This test verifies that attempting to log in with invalid credentials results in an error message 'Unable to log in with provided credentials'.")
     public void tc04_LoginFailed(String email, String password) {
         HomePage hp = new HomePage(driver);
         hp.login(email, password);
@@ -54,8 +56,7 @@ public class homePageTest extends BaseTest {
         };
         return myData;
     }
-
-    @Test
+    @Test(description = "Verify error message when trying to login without entering email and password")
     public void tc05_getErrorRequiredMsg() {
         HomePage hp = new HomePage(driver);
         hp.login("", "");

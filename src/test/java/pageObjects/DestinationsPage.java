@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class DestinationsPage extends BasePage {
+public class DestinationsPage extends NavBar {
 
     @FindBy(css = ".form-input__input.react-autosuggest__input.destinations-header__input")
     private WebElement searchDestinationsFiled;

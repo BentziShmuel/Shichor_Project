@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 
-public class CreateTripPage extends BasePage {
+public class CreateTripPage extends NavBar {
 
     @FindBy(css = "div:nth-child(1) > div.flows__item-btn.hide-xs.show-md > button")
     private WebElement startBtn;
