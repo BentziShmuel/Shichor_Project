@@ -9,7 +9,8 @@ import pageObjects.OverviewPage;
 public class CreateTripPageTest extends BaseTest {
 
 
-    @Test(description = "Verify clicking 'Build Your Trip' button from homepage takes user to Create Trip page with correct title")    public void tc01_getTtitlePage() {
+    @Test(description = "Verify clicking 'Build Your Trip' button from homepage takes user to Create Trip page with correct title") 
+    public void tc01_getTtitlePage() {
         HomePage hp = new HomePage(driver);
         hp.closePopUp();
         hp.clickGotItBtn();
